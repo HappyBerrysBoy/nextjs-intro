@@ -1,8 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import Layout from "../components/Layout";
+import "../styles/globals.css";
+// Custom App이 있는 여기에만 css import가 가능하다
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <div>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </div>
+  );
 }
 
-export default MyApp
+export default App;
